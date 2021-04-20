@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidTestProject</string>
+    <string name="hint_1">Enter Name</string>
+    <string name="hint_2">Enter Email</string>
+    <string name="submit">Submit</string>
+    <string name="movie_image">movie image</string>
+</resources>
