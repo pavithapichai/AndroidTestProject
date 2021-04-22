@@ -9,9 +9,16 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.androidtestproject.utils.Event;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
 
 
+@HiltViewModel
 public class MainViewModel extends ViewModel  {
+    @Inject
+    public MainViewModel() {
+    }
 
     public MutableLiveData<String> inputEmail = new MutableLiveData<>();
     public MutableLiveData<String> inputPassword = new MutableLiveData<>();

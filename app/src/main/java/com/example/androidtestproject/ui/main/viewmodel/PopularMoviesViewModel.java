@@ -12,8 +12,15 @@ import com.example.androidtestproject.data.model.PopularMoviesResponse;
 import com.example.androidtestproject.data.repository.PopularMoviesRepository;
 import com.example.androidtestproject.utils.Event;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class PopularMoviesViewModel extends ViewModel  {
+
     private  MutableLiveData<PopularMoviesResponse> moviesData;
+    @Inject
     public PopularMoviesViewModel(PopularMoviesRepository popularMoviesRepository) {
         moviesData = popularMoviesRepository.getPopularMovies();
     }

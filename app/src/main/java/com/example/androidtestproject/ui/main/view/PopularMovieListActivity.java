@@ -14,26 +14,29 @@ import com.example.androidtestproject.ui.main.adapter.MovieListAdapter;
 import com.example.androidtestproject.ui.main.viewmodel.PopularMoviesViewModel;
 import com.example.androidtestproject.ui.main.viewmodel.PopularViewModelFactory;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class PopularMovieListActivity extends AppCompatActivity {
     private ActivityPopularMoviesListBinding popularMoviesListBinding;
-    private MovieListAdapter movieListAdapter;
-    private PopularMoviesViewModel popularMoviesViewModel;
-    private PopularViewModelFactory viewModelFactory;
-    private PopularMoviesRepository popularMoviesRepository;
+    @Inject
+     MovieListAdapter movieListAdapter;
+     PopularMoviesViewModel popularMoviesViewModel;
+     @Inject
+     PopularViewModelFactory viewModelFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         popularMoviesListBinding = DataBindingUtil.setContentView(this, R.layout.activity_popular_movies_list);
-        popularMoviesRepository =new PopularMoviesRepository();
-        viewModelFactory = new PopularViewModelFactory(popularMoviesRepository);
         popularMoviesViewModel = new ViewModelProvider(this,viewModelFactory).get(PopularMoviesViewModel.class);
         initRecyclerView();
     }
 
     public void initRecyclerView(){
         popularMoviesListBinding.moviesList.setLayoutManager(new GridLayoutManager(this,2));
-        movieListAdapter =new  MovieListAdapter();
         popularMoviesListBinding.moviesList.setAdapter(movieListAdapter);
         displayUserList();
     }

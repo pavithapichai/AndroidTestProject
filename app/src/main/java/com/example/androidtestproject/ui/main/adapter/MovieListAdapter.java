@@ -20,7 +20,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListViewHolder> {
+    @Inject
+    public MovieListAdapter() {
+    }
+
     private List<PopularMovie> popularMovies =new ArrayList<>();
 
     @NonNull

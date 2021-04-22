@@ -19,10 +19,15 @@ import com.example.androidtestproject.ui.main.viewmodel.PopularViewModelFactory;
 
 import java.util.Observer;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding activityMainBinding;
-    private MainViewModel mainViewModel;
+     private MainViewModel mainViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

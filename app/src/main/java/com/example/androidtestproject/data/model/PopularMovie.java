@@ -1,5 +1,6 @@
 package com.example.androidtestproject.data.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PopularMovie {
